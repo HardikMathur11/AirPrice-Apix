@@ -1,0 +1,25 @@
+[
+  {
+    "source": "EaseMyTrip",
+    "source_type": "ota",
+    "route": "DEL-BOM",
+    "origin": "DEL",
+    "destination": "BOM",
+    "travel_date": "2026-09-08",
+    "booking_window": "T+1",
+    "base_fare": 7050.08,
+    "taxes": 1484.5,
+    "convenience_fee": 0.0,
+    "total_fare": 8534.58,
+    "fare_class": "Economy",
+    "availability": "Available",
+    "scrape_timestamp": "2026-09-07T12:57:47.496942",
+    "flight_number": "6E-204",
+    "airline_code": "6E",
+    "raw_payload": {
+      "scraped_at": "2026-09-07T12:57:47.494370",
+      "source": "EaseMyTrip"
+    },
+    "live_extraction_mode": "calibrated_live_fallback"
+  }
+]

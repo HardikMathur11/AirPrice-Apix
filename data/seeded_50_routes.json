@@ -1,0 +1,352 @@
+[
+  {
+    "route_code": "DEL-BOM",
+    "origin": "DEL",
+    "destination": "BOM",
+    "dgca_weight": 15.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-BLR",
+    "origin": "DEL",
+    "destination": "BLR",
+    "dgca_weight": 12.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "BOM-BLR",
+    "origin": "BOM",
+    "destination": "BLR",
+    "dgca_weight": 10.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-CCU",
+    "origin": "DEL",
+    "destination": "CCU",
+    "dgca_weight": 7.5,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "MAA-DEL",
+    "origin": "MAA",
+    "destination": "DEL",
+    "dgca_weight": 5.5,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-HYD",
+    "origin": "DEL",
+    "destination": "HYD",
+    "dgca_weight": 4.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "BOM-GOI",
+    "origin": "BOM",
+    "destination": "GOI",
+    "dgca_weight": 2.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-HYD",
+    "origin": "BLR",
+    "destination": "HYD",
+    "dgca_weight": 2.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "BOM-MAA",
+    "origin": "BOM",
+    "destination": "MAA",
+    "dgca_weight": 1.5,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-AMD",
+    "origin": "DEL",
+    "destination": "AMD",
+    "dgca_weight": 1.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-PNQ",
+    "origin": "DEL",
+    "destination": "PNQ",
+    "dgca_weight": 2.2,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-CCU",
+    "origin": "BOM",
+    "destination": "CCU",
+    "dgca_weight": 2.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "BLR-CCU",
+    "origin": "BLR",
+    "destination": "CCU",
+    "dgca_weight": 1.9,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-COK",
+    "origin": "DEL",
+    "destination": "COK",
+    "dgca_weight": 1.8,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-HYD",
+    "origin": "BOM",
+    "destination": "HYD",
+    "dgca_weight": 1.7,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-PAT",
+    "origin": "DEL",
+    "destination": "PAT",
+    "dgca_weight": 1.6,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-GAU",
+    "origin": "DEL",
+    "destination": "GAU",
+    "dgca_weight": 1.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-LKO",
+    "origin": "DEL",
+    "destination": "LKO",
+    "dgca_weight": 1.4,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-GOI",
+    "origin": "BLR",
+    "destination": "GOI",
+    "dgca_weight": 1.3,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-IXB",
+    "origin": "DEL",
+    "destination": "IXB",
+    "dgca_weight": 1.2,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-AMD",
+    "origin": "BOM",
+    "destination": "AMD",
+    "dgca_weight": 1.1,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-COK",
+    "origin": "BLR",
+    "destination": "COK",
+    "dgca_weight": 1.1,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-JAI",
+    "origin": "DEL",
+    "destination": "JAI",
+    "dgca_weight": 1.0,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "MAA-BLR",
+    "origin": "MAA",
+    "destination": "BLR",
+    "dgca_weight": 1.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "DEL-SXR",
+    "origin": "DEL",
+    "destination": "SXR",
+    "dgca_weight": 1.0,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-PNQ",
+    "origin": "BOM",
+    "destination": "PNQ",
+    "dgca_weight": 1.0,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "HYD-CCU",
+    "origin": "HYD",
+    "destination": "CCU",
+    "dgca_weight": 1.0,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "BLR-PNQ",
+    "origin": "BLR",
+    "destination": "PNQ",
+    "dgca_weight": 1.1,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-VNS",
+    "origin": "DEL",
+    "destination": "VNS",
+    "dgca_weight": 1.1,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-JAI",
+    "origin": "BOM",
+    "destination": "JAI",
+    "dgca_weight": 1.1,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-BBI",
+    "origin": "DEL",
+    "destination": "BBI",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-IXC",
+    "origin": "DEL",
+    "destination": "IXC",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-PAT",
+    "origin": "BOM",
+    "destination": "PAT",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-PAT",
+    "origin": "BLR",
+    "destination": "PAT",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-TRV",
+    "origin": "DEL",
+    "destination": "TRV",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "MAA-CCU",
+    "origin": "MAA",
+    "destination": "CCU",
+    "dgca_weight": 0.5,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "BOM-VNS",
+    "origin": "BOM",
+    "destination": "VNS",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-GAU",
+    "origin": "BLR",
+    "destination": "GAU",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "HYD-GOI",
+    "origin": "HYD",
+    "destination": "GOI",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-ATQ",
+    "origin": "DEL",
+    "destination": "ATQ",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-COK",
+    "origin": "BOM",
+    "destination": "COK",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-AMD",
+    "origin": "BLR",
+    "destination": "AMD",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-RPR",
+    "origin": "DEL",
+    "destination": "RPR",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BOM-LKO",
+    "origin": "BOM",
+    "destination": "LKO",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-UDR",
+    "origin": "DEL",
+    "destination": "UDR",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-LKO",
+    "origin": "BLR",
+    "destination": "LKO",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "MAA-HYD",
+    "origin": "MAA",
+    "destination": "HYD",
+    "dgca_weight": 0.5,
+    "tier": "Tier-1"
+  },
+  {
+    "route_code": "BOM-IXB",
+    "origin": "BOM",
+    "destination": "IXB",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "DEL-IXR",
+    "origin": "DEL",
+    "destination": "IXR",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  },
+  {
+    "route_code": "BLR-VNS",
+    "origin": "BLR",
+    "destination": "VNS",
+    "dgca_weight": 0.5,
+    "tier": "Tier-2"
+  }
+]

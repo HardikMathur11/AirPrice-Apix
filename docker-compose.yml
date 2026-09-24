@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: airprice_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://airprice_user:airprice_pass@db:5432/airprice
+      - MONGODB_URL=mongodb://mongo:27017
+      - REDIS_URL=redis://redis:6379
+      - SECRET_KEY=airprice_production_secret_key_2026
+      - LOG_LEVEL=INFO
+    depends_on:
+      - db
+      - mongo
+      - redis
+    restart: always
+
+  db:
+    image: timescale/timescaledb:latest-pg15
+    container_name: airprice_timescaledb
+    environment:
+      - POSTGRES_USER=airprice_user
+      - POSTGRES_PASSWORD=airprice_pass
+      - POSTGRES_DB=airprice
+    ports:
+      - "5432:5432"
+    volumes:
+      - timescale_data:/var/lib/postgresql/data
+    restart: always
+
+  mongo:
+    image: mongo:6.0
+    container_name: airprice_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+
+  redis:
+    image: redis:7.0-alpine
+    container_name: airprice_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+volumes:
+  timescale_data:
+  mongo_data:
+  redis_data:

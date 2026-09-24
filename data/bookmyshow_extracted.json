@@ -1,0 +1,36 @@
+{
+  "website": "BookMyShow India (Mumbai Region)",
+  "url": "https://in.bookmyshow.com/explore/home/mumbai",
+  "page_title": "Movie Tickets, Plays, Sports, Events & Cinemas near Mumbai - BookMyShow Mumbai.",
+  "total_extracted_items": 7,
+  "items": [
+    {
+      "title": "Mirzapur: The Movie",
+      "type": "Movie / Event / Offer"
+    },
+    {
+      "title": "Hanuman Ansh",
+      "type": "Movie / Event / Offer"
+    },
+    {
+      "title": "Spider-Man: Brand New Day",
+      "type": "Movie / Event / Offer"
+    },
+    {
+      "title": "The Odyssey",
+      "type": "Movie / Event / Offer"
+    },
+    {
+      "title": "Toxic: A Fairy Tale for Grown-ups",
+      "type": "Movie / Event / Offer"
+    },
+    {
+      "title": "Stream",
+      "type": "Movie / Event / Offer"
+    },
+    {
+      "title": "hut",
+      "type": "Movie / Event / Offer"
+    }
+  ]
+}

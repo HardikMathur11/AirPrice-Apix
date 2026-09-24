@@ -1,0 +1,6 @@
+{
+  "name": "AirPrice APIx",
+  "description": "India's real-time airfare price index — tracking every fare, explaining every spike, policymakers and travelers .",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
