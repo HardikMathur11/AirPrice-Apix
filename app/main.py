@@ -60,6 +60,17 @@ app.add_middleware(
 
 app.include_router(api_router)
 
+@app.get("/", tags=["Root"])
+async def root():
+    """Root welcome endpoint."""
+    return {
+        "message": "Welcome to AirPrice APIx Backend Platform",
+        "version": settings.VERSION,
+        "docs": "/docs",
+        "health": "/health",
+        "status": "online"
+    }
+
 @app.get("/health", tags=["Monitoring"])
 async def health_check():
     """Health check endpoint returning system status and DB health."""
