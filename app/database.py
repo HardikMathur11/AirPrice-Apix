@@ -7,13 +7,18 @@ import logging
 
 logger = logging.getLogger("airprice.database")
 
-# SQLAlchemy Async Engine (PostgreSQL / TimescaleDB)
-engine = create_async_engine(
-    settings.DATABASE_URL,
-    echo=False,
-    future=True,
-    pool_pre_ping=True
-)
+db_url = settings.DATABASE_URL
+if db_url.startswith("sqlite:///") and not db_url.startswith("sqlite+aiosqlite:///"):
+    db_url = db_url.replace("sqlite:///", "sqlite+aiosqlite:///")
+elif db_url.startswith("sqlite://") and not db_url.startswith("sqlite+aiosqlite://"):
+    db_url = db_url.replace("sqlite://", "sqlite+aiosqlite://")
+
+# SQLAlchemy Async Engine (PostgreSQL / TimescaleDB / SQLite)
+engine_kwargs = {"echo": False, "future": True}
+if not db_url.startswith("sqlite"):
+    engine_kwargs["pool_pre_ping"] = True
+
+engine = create_async_engine(db_url, **engine_kwargs)
 
 AsyncSessionLocal = async_sessionmaker(
     bind=engine,
