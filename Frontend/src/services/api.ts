@@ -104,6 +104,7 @@ export interface HealthResponse {
     mongodb: boolean;
     redis: boolean;
   };
+  next_crawl_time?: string;
 }
 
 async function apiFetch<T>(endpoint: string, apiKey: string = DEFAULT_API_KEY): Promise<T> {

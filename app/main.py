@@ -75,9 +75,12 @@ async def root():
 async def health_check():
     """Health check endpoint returning system status and DB health."""
     db_status = await check_db_health()
+    job = scheduler.get_job('scrape_all_sources')
+    next_run = job.next_run_time.isoformat() if (job and getattr(job, 'next_run_time', None)) else None
     return {
         "status": "ok",
         "service": settings.PROJECT_NAME,
         "version": settings.VERSION,
-        "database_health": db_status
+        "database_health": db_status,
+        "next_crawl_time": next_run
     }

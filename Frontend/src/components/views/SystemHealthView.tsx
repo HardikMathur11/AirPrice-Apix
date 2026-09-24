@@ -23,13 +23,21 @@ export const SystemHealthView: React.FC<SystemHealthViewProps> = ({ language }) 
   const t = TRANSLATIONS[language];
   const [healthData, setHealthData] = useState<HealthResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [secondsUntilNextCrawl, setSecondsUntilNextCrawl] = useState(252);
+  const [secondsUntilNextCrawl, setSecondsUntilNextCrawl] = useState<number>(() => {
+    const nowSec = Math.floor(Date.now() / 1000);
+    return 7200 - (nowSec % 7200);
+  });
 
   const fetchHealthStatus = async () => {
     try {
       setLoading(true);
       const res = await apiService.getHealth();
       setHealthData(res);
+      if (res.next_crawl_time) {
+        const nextTime = new Date(res.next_crawl_time).getTime();
+        const diffSec = Math.max(0, Math.floor((nextTime - Date.now()) / 1000));
+        setSecondsUntilNextCrawl(diffSec);
+      }
     } catch (err) {
       console.warn('Health API note:', err);
     } finally {
@@ -40,14 +48,18 @@ export const SystemHealthView: React.FC<SystemHealthViewProps> = ({ language }) 
   useEffect(() => {
     fetchHealthStatus();
     const timer = setInterval(() => {
-      setSecondsUntilNextCrawl((prev) => (prev > 1 ? prev - 1 : 300));
+      setSecondsUntilNextCrawl((prev) => (prev > 1 ? prev - 1 : 7200));
     }, 1000);
     return () => clearInterval(timer);
   }, []);
 
   const formatCountdown = (totalSec: number) => {
-    const m = Math.floor(totalSec / 60);
+    const hrs = Math.floor(totalSec / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
     const s = totalSec % 60;
+    if (hrs > 0) {
+      return `${hrs}h ${m}m ${s < 10 ? '0' : ''}${s}s`;
+    }
     return `${m}m ${s < 10 ? '0' : ''}${s}s`;
   };
 
