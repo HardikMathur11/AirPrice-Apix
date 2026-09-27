@@ -41,7 +41,7 @@
   - [10.1 Backend Deployment (Render / Docker)](#101-backend-deployment-render--docker)
   - [10.2 Frontend Deployment (Vercel)](#102-frontend-deployment-vercel)
 - [11. Complete REST API Specification](#11-complete-rest-api-specification)
-- [12. Project Team Members & Core Contributions](#12-project-team-members--core-contributions)
+- [12. Project Team & Core Leadership](#12-project-team--core-leadership)
 - [13. Observability, Security & License](#13-observability-security--license)
 
 ---
@@ -499,22 +499,22 @@ X-API-Key: airprice_demo_key_2026
 
 ---
 
-## 12. Project Team Members & Core Contributions
+## 12. Project Team & Core Leadership
 
-```text
-               ┌─────────────────────────────────────────────────────────────┐
-               │    AirPrice APIx Platform Engineering & Leadership Team     │
-               └─────────────────────────────────────────────────────────────┘
-```
+> [!NOTE]
+> ### 🏆 AirPrice APIx — Core Engineering & Research Team
+> Developed for the **Ministry of Statistics and Programme Implementation (MoSPI)** under **Smart India Hackathon (SIH 2026 / Problem Statement ID: 26056)**.
 
-| Member | Leadership Role | Technical Focus & Core Contributions |
+| Member | Leadership Role | Core Domain & Technical Contributions |
 | :--- | :--- | :--- |
-| 👑 **Gunjan Jain** | **Team Leader** | • Overall Project Strategy, Leadership & Task Execution Guidance<br>• Domain Problem Analysis & Strategic Solution Architecture for MoSPI PS 26056<br>• Cross-Functional Coordination & Presentation Engineering |
-| 🛠️ **Hardik Mathur** | **Lead Backend Systems Engineer** | • Core `APIx` Laspeyres Mathematical Calculation Engine & Async Microservices<br>• Multi-Source Web Scraping Engine (11 Portals) & Playwright Anti-Bot Stealth Architecture<br>• Redis Caching, SQLite/TimescaleDB Storage Pipeline & Render Docker Deployment |
-| 🎨 **Siddharth Raut** | **Lead UI/UX Engineer** | • Production Web Application Architecture (React 18 + Vite & TypeScript)<br>• High-Performance Data Visualization System (Recharts, Interactive SVG Route Maps)<br>• User Experience Design System, Micro-Animations & Responsive Dashboard Layouts |
-| 🖌️ **Chitra Saini** | **Lead Graphic Designer** | • Visual Brand Identity, Color System & Typography Guidelines<br>• Asset Creation, System Diagrams & Visual Presentation Components<br>• UI Design Aesthetics & Design System Polish |
-| 🔬 **Abhyudhay Jain** | **Solution Research Specialist** | • Problem Statement Research & MoSPI CPI Framework Analysis<br>• Data Strategy, DGCA Passenger Volume Weight Calibration & Solution Validation<br>• Analytical Modeling & Benchmark Methodologies |
-| 📋 **Vaidehi Nagda** | **Policy & Problem Research Lead** | • NSO/MoSPI Retail Inflation & Transport Sub-Group Policy Research<br>• Competitive OTA Portal Benchmark & User Workflow Analysis<br>• Requirements Mapping & Government Standard Documentation |
+| 👑 **Gunjan Jain** | **Team Leader** | **Strategic Solution Architecture & Governance**<br>• Overall project leadership, roadmap execution & task management<br>• High-level solution strategy for MoSPI Problem Statement 26056<br>• Cross-functional team coordination & presentation engineering |
+| 🛠️ **Hardik Mathur** | **Lead Backend Systems Engineer** | **Core APIx Engine & Infrastructure Architecture**<br>• Laspeyres Index mathematical engine & async FastAPI REST microservices<br>• Multi-source web scraping pipeline (11 Portals) & Playwright stealth anti-bot evasion<br>• Redis caching, SQLite/TimescaleDB pipeline & Render Docker container deployment |
+| 🔬 **Abhyudhay Jain** | **Research Lead** | **Domain Analytics & Solution Strategy**<br>• In-depth research lead on MoSPI CPI inflation framework & problem statement analytics<br>• DGCA passenger volume weight calibration, baseline route modeling & solution verification<br>• Data strategy, statistical sampling methodology & analytical benchmarking |
+| 🎨 **Siddharth Raut** | **Lead UI/UX Engineer** | **Production Frontend Architecture & Design System**<br>• Production React 18 + Vite & TypeScript web application architecture<br>• High-performance interactive chart visualization system (Recharts, SVG Route Maps)<br>• User experience engineering, micro-animations & responsive MoSPI dashboard layouts |
+| 🖌️ **Chitra Saini** | **Lead Graphic Designer** | **Brand Identity & Visual System Design**<br>• Visual brand identity, color palette system & typography guidelines<br>• Custom visual assets, system architecture diagrams & UI presentation components<br>• Aesthetic refinement, design system polish & visual consistency |
+| 📋 **Vaidehi Nagda** | **Policy & Problem Research Analyst** | **Policy Research & Requirements Analysis**<br>• NSO/MoSPI retail inflation policy research & transport sub-group analysis<br>• OTA portal competitive benchmarking & user workflow mapping<br>• Problem statement requirements mapping & government documentation compliance |
+
+<br>
 
 ---
 
