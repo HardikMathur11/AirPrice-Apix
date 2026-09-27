@@ -502,17 +502,17 @@ X-API-Key: airprice_demo_key_2026
 ## 12. Project Team & Core Leadership
 
 > [!NOTE]
-> ### 🏆 AirPrice APIx — Core Engineering & Research Team
-> Developed for the **Ministry of Statistics and Programme Implementation (MoSPI)** under **Smart India Hackathon (SIH 2026 / Problem Statement ID: 26056)**.
+> ### 🏆 AirPrice APIx — Executive Project Leadership & Engineering Team
+> **Smart India Hackathon 2026** | **Ministry of Statistics and Programme Implementation (MoSPI ID: 26056)**
 
-| Member | Leadership Role | Core Domain & Technical Contributions |
+| Team Member | Role & Specialization | Core Responsibilities & Technical Impact |
 | :--- | :--- | :--- |
-| 👑 **Gunjan Jain** | **Team Leader** | **Strategic Solution Architecture & Governance**<br>• Overall project leadership, roadmap execution & task management<br>• High-level solution strategy for MoSPI Problem Statement 26056<br>• Cross-functional team coordination & presentation engineering |
-| 🛠️ **Hardik Mathur** | **Lead Backend Systems Engineer** | **Core APIx Engine & Infrastructure Architecture**<br>• Laspeyres Index mathematical engine & async FastAPI REST microservices<br>• Multi-source web scraping pipeline (11 Portals) & Playwright stealth anti-bot evasion<br>• Redis caching, SQLite/TimescaleDB pipeline & Render Docker container deployment |
-| 🔬 **Abhyudhay Jain** | **Research Lead** | **Domain Analytics & Solution Strategy**<br>• In-depth research lead on MoSPI CPI inflation framework & problem statement analytics<br>• DGCA passenger volume weight calibration, baseline route modeling & solution verification<br>• Data strategy, statistical sampling methodology & analytical benchmarking |
-| 🎨 **Siddharth Raut** | **Lead UI/UX Engineer** | **Production Frontend Architecture & Design System**<br>• Production React 18 + Vite & TypeScript web application architecture<br>• High-performance interactive chart visualization system (Recharts, SVG Route Maps)<br>• User experience engineering, micro-animations & responsive MoSPI dashboard layouts |
-| 🖌️ **Chitra Saini** | **Lead Graphic Designer** | **Brand Identity & Visual System Design**<br>• Visual brand identity, color palette system & typography guidelines<br>• Custom visual assets, system architecture diagrams & UI presentation components<br>• Aesthetic refinement, design system polish & visual consistency |
-| 📋 **Vaidehi Nagda** | **Policy & Problem Research Analyst** | **Policy Research & Requirements Analysis**<br>• NSO/MoSPI retail inflation policy research & transport sub-group analysis<br>• OTA portal competitive benchmarking & user workflow mapping<br>• Problem statement requirements mapping & government documentation compliance |
+| **Gunjan Jain** | **Team Leader**<br>`Solution Architecture` | **Strategic Leadership & Solution Governance**<br>• End-to-end project orchestration, milestone execution & team governance<br>• High-level solution strategy for MoSPI Problem Statement 26056<br>• Stakeholder alignment, requirements synthesis & final presentation engineering |
+| **Hardik Mathur** | **Lead Backend Engineer**<br>`Systems & Infrastructure` | **Core APIx Engine & Infrastructure Architecture**<br>• Architected Laspeyres Index mathematical engine & async FastAPI microservices<br>• Built 11-portal automated scraping pipeline with Playwright stealth anti-bot evasion<br>• Engineered Redis key deduplication, SQLite/TimescaleDB pipeline & Docker/Render DevOps |
+| **Abhyuday Jain** | **Research Lead**<br>`Domain Analytics & Policy` | **Domain Analytics & Data Strategy**<br>• Led core research on NSO/MoSPI CPI inflation framework & problem statement analytics<br>• Calibrated DGCA passenger volume weights across 50 domestic corridors<br>• Formulated statistical sampling methodologies, IQR anomaly bounds & solution validation |
+| **Siddharth Raut** | **Lead UI/UX Engineer**<br>`Frontend & Design System` | **Production Web Application Architecture**<br>• Designed React 18 + Vite & TypeScript production frontend application<br>• Built high-performance data visualizations (Recharts, interactive SVG India flight map)<br>• Developed micro-animations, bi-lingual i18n engine (English/Hindi) & responsive UI layouts |
+| **Chitra Saini** | **Lead Graphic Designer**<br>`Visual Identity & Assets` | **Brand Identity & Visual System Design**<br>• Created visual brand identity, color system & typography design standards<br>• Designed custom visual assets, system architecture diagrams & UI presentation graphics<br>• Refined user interface aesthetics, visual consistency & design system polish |
+| **Vaidehi Nagda** | **Policy & Problem Research Analyst**<br>`Policy & Benchmarking` | **Policy Research & Requirement Engineering**<br>• Conducted NSO/MoSPI retail inflation policy research & transport sub-group analysis<br>• Mapped OTA portal competitive benchmarks & consumer purchasing workflows<br>• Ensured government standards compliance, documentation & analytical verification |
 
 <br>
 
