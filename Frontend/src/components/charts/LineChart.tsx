@@ -4,21 +4,23 @@ import { HISTORICAL_TREND_DATA } from '../../data/mockData';
 interface LineChartProps {
   title?: string;
   className?: string;
+  embedded?: boolean;
 }
 
 export const LineChart: React.FC<LineChartProps> = ({
   title = 'Airfare Price Index — 30 Day Trend',
   className = '',
+  embedded = false,
 }) => {
   const [activeRange, setActiveRange] = useState<'7D' | '30D' | '90D' | '1Y'>('30D');
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   const data = HISTORICAL_TREND_DATA[activeRange] || HISTORICAL_TREND_DATA['30D'];
 
-  // Dimensions
-  const svgWidth = 680;
-  const svgHeight = 260;
-  const padding = { top: 25, right: 30, bottom: 40, left: 45 };
+  // Enhanced Larger Dimensions for high visibility
+  const svgWidth = 720;
+  const svgHeight = 320;
+  const padding = { top: 30, right: 35, bottom: 45, left: 50 };
 
   const chartWidth = svgWidth - padding.left - padding.right;
   const chartHeight = svgHeight - padding.top - padding.bottom;
@@ -52,7 +54,7 @@ export const LineChart: React.FC<LineChartProps> = ({
   const activeHoverItem = hoveredIdx !== null ? data[hoveredIdx] : null;
 
   return (
-    <div id="apix-trend-chart-container" className={`bg-white rounded-2xl p-5 md:p-6 border border-[#E2E8F0] shadow-xs ${className}`}>
+    <div id="apix-trend-chart-container" className={embedded ? `w-full h-full flex flex-col justify-between ${className}` : `bg-white rounded-2xl p-5 md:p-6 border border-[#E2E8F0] shadow-xs ${className}`}>
       {/* Header & Controls */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>

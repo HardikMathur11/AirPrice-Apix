@@ -41,7 +41,8 @@
   - [10.1 Backend Deployment (Render / Docker)](#101-backend-deployment-render--docker)
   - [10.2 Frontend Deployment (Vercel)](#102-frontend-deployment-vercel)
 - [11. Complete REST API Specification](#11-complete-rest-api-specification)
-- [12. Observability, Security & License](#12-observability-security--license)
+- [12. Project Team Members & Core Contributions](#12-project-team-members--core-contributions)
+- [13. Observability, Security & License](#13-observability-security--license)
 
 ---
 
@@ -498,7 +499,26 @@ X-API-Key: airprice_demo_key_2026
 
 ---
 
-## 12. Observability, Security & License
+## 12. Project Team Members & Core Contributions
+
+```text
+               ┌─────────────────────────────────────────────────────────────┐
+               │    AirPrice APIx Platform Engineering & Leadership Team     │
+               └─────────────────────────────────────────────────────────────┘
+```
+
+| Member | Leadership Role | Technical Focus & Core Contributions |
+| :--- | :--- | :--- |
+| 👑 **Gunjan Jain** | **Team Leader** | • Overall Project Strategy, Leadership & Task Execution Guidance<br>• Domain Problem Analysis & Strategic Solution Architecture for MoSPI PS 26056<br>• Cross-Functional Coordination & Presentation Engineering |
+| 🛠️ **Hardik Mathur** | **Lead Backend Systems Engineer** | • Core `APIx` Laspeyres Mathematical Calculation Engine & Async Microservices<br>• Multi-Source Web Scraping Engine (11 Portals) & Playwright Anti-Bot Stealth Architecture<br>• Redis Caching, SQLite/TimescaleDB Storage Pipeline & Render Docker Deployment |
+| 🎨 **Siddharth Raut** | **Lead UI/UX Engineer** | • Production Web Application Architecture (React 18 + Vite & TypeScript)<br>• High-Performance Data Visualization System (Recharts, Interactive SVG Route Maps)<br>• User Experience Design System, Micro-Animations & Responsive Dashboard Layouts |
+| 🖌️ **Chitra Saini** | **Lead Graphic Designer** | • Visual Brand Identity, Color System & Typography Guidelines<br>• Asset Creation, System Diagrams & Visual Presentation Components<br>• UI Design Aesthetics & Design System Polish |
+| 🔬 **Abhyudhay Jain** | **Solution Research Specialist** | • Problem Statement Research & MoSPI CPI Framework Analysis<br>• Data Strategy, DGCA Passenger Volume Weight Calibration & Solution Validation<br>• Analytical Modeling & Benchmark Methodologies |
+| 📋 **Vaidehi Nagda** | **Policy & Problem Research Lead** | • NSO/MoSPI Retail Inflation & Transport Sub-Group Policy Research<br>• Competitive OTA Portal Benchmark & User Workflow Analysis<br>• Requirements Mapping & Government Standard Documentation |
+
+---
+
+## 13. Observability, Security & License
 
 ### Observability & Logging
 * Structured logging powered by standard Python `logging` and `python-json-logger`.

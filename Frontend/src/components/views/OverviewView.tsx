@@ -261,34 +261,29 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
         {/* Left 2 Cols: Time Series Line Chart */}
         <div className="lg:col-span-2 bg-white rounded-2xl border border-[#E2E8F0] shadow-2xs p-6 flex flex-col justify-between">
-          <LineChart title="APIx Daily Price Index Velocity (30 Days)" />
+          <LineChart title="APIx Daily Price Index Velocity (30 Days)" embedded={true} />
         </div>
 
         {/* Right Col: Interactive India Route Network */}
         <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-2xs p-6 flex flex-col justify-between space-y-4">
-          <div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-[#1769E0]" />
-                <h2 className="text-base sm:text-lg font-extrabold text-[#0B1F3A]">
-                  50 Monitored DGCA Corridors
-                </h2>
-              </div>
-              <button
-                onClick={() => onNavigate('routes')}
-                className="text-xs font-extrabold text-[#1769E0] hover:underline cursor-pointer flex items-center gap-1"
-              >
-                <span>View All</span>
-                <ChevronRight className="w-3.5 h-3.5" />
-              </button>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Globe className="w-4 h-4 text-[#1769E0]" />
+              <h2 className="text-base sm:text-lg font-extrabold text-[#0B1F3A]">
+                50 Monitored DGCA Corridors
+              </h2>
             </div>
-            <p className="text-xs text-[#627D98] font-medium mt-1">
-              Top metro & tier-2 regional domestic flight routes weighted by official volume
-            </p>
+            <button
+              onClick={() => onNavigate('routes')}
+              className="text-xs font-extrabold text-[#1769E0] hover:underline cursor-pointer flex items-center gap-1"
+            >
+              <span>View All</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
           </div>
 
-          <div className="flex-1 min-h-[260px] flex items-center justify-center p-2 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0]">
-            <IndiaMap onSelectRoute={onSelectRoute} />
+          <div className="flex-1 min-h-[300px] flex items-center justify-center p-3 bg-[#FAFCFF] rounded-xl border border-[#EAF3FF]">
+            <IndiaMap onSelectRoute={onSelectRoute} embedded={true} />
           </div>
 
           <div className="pt-2 border-t border-[#F1F5F9] flex items-center justify-between text-xs text-[#627D98]">

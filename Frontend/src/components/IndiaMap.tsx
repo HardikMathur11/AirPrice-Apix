@@ -6,9 +6,23 @@ import { Plane, AlertTriangle, CheckCircle, Info } from 'lucide-react';
 interface IndiaMapProps {
   onSelectRoute: (routeId: string) => void;
   selectedRouteId?: string;
+  embedded?: boolean;
 }
 
-export const IndiaMap: React.FC<IndiaMapProps> = ({ onSelectRoute, selectedRouteId }) => {
+// Per-airport smart label positioning offsets to avoid clipping & overlaps
+const NODE_LABEL_CONFIG: Record<string, { codeDx: number; codeDy: number; nameDx: number; nameDy: number; textAnchor: 'start' | 'end' | 'middle' }> = {
+  DEL: { codeDx: -10, codeDy: -2, nameDx: -10, nameDy: 10, textAnchor: 'end' },
+  JAI: { codeDx: -10, codeDy: 0, nameDx: -10, nameDy: 10, textAnchor: 'end' },
+  BOM: { codeDx: -10, codeDy: 0, nameDx: -10, nameDy: 10, textAnchor: 'end' },
+  BLR: { codeDx: -10, codeDy: 0, nameDx: -10, nameDy: 10, textAnchor: 'end' },
+  HYD: { codeDx: 10, codeDy: -2, nameDx: 10, nameDy: 10, textAnchor: 'start' },
+  MAA: { codeDx: 10, codeDy: 0, nameDx: 10, nameDy: 11, textAnchor: 'start' },
+  CCU: { codeDx: 10, codeDy: -2, nameDx: 10, nameDy: 10, textAnchor: 'start' },
+  IXB: { codeDx: 0, codeDy: -12, nameDx: 0, nameDy: -22, textAnchor: 'middle' },
+  GAU: { codeDx: 10, codeDy: 0, nameDx: 10, nameDy: 11, textAnchor: 'start' },
+};
+
+export const IndiaMap: React.FC<IndiaMapProps> = ({ onSelectRoute, selectedRouteId, embedded = false }) => {
   const [hoveredRoute, setHoveredRoute] = useState<RouteData | null>(null);
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
@@ -25,36 +39,38 @@ export const IndiaMap: React.FC<IndiaMapProps> = ({ onSelectRoute, selectedRoute
   };
 
   return (
-    <div id="india-airfare-heatmap" className="relative w-full bg-white rounded-2xl p-5 md:p-6 border border-[#E2E8F0] shadow-xs">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-        <div>
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#1769E0]" />
-            <h3 className="text-base sm:text-lg font-bold text-[#102A43]">
-              India Airfare Heatmap
-            </h3>
+    <div id="india-airfare-heatmap" className={embedded ? "relative w-full h-full flex flex-col justify-between" : "relative w-full bg-white rounded-2xl p-5 md:p-6 border border-[#E2E8F0] shadow-xs"}>
+      {!embedded && (
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#1769E0]" />
+              <h3 className="text-base sm:text-lg font-bold text-[#102A43]">
+                India Airfare Heatmap
+              </h3>
+            </div>
+            <p className="text-xs text-[#627D98] mt-0.5">
+              Real-time route corridors with pricing velocity & anomaly state. Click route to analyze.
+            </p>
           </div>
-          <p className="text-xs text-[#627D98] mt-0.5">
-            Real-time route corridors with pricing velocity & anomaly state. Click route to analyze.
-          </p>
-        </div>
 
-        {/* Legend */}
-        <div className="flex items-center gap-3 text-xs bg-[#F6F9FC] px-3 py-1.5 rounded-lg border border-[#E2E8F0]/70">
-          <span className="flex items-center gap-1.5 font-medium text-[#102A43]">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
-            Stable
-          </span>
-          <span className="flex items-center gap-1.5 font-medium text-[#102A43]">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
-            Moderate Increase
-          </span>
-          <span className="flex items-center gap-1.5 font-medium text-[#102A43]">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444] animate-pulse" />
-            Fare Shock
-          </span>
+          {/* Legend */}
+          <div className="flex items-center gap-3 text-xs bg-[#F6F9FC] px-3 py-1.5 rounded-lg border border-[#E2E8F0]/70">
+            <span className="flex items-center gap-1.5 font-medium text-[#102A43]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+              Stable
+            </span>
+            <span className="flex items-center gap-1.5 font-medium text-[#102A43]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
+              Moderate Increase
+            </span>
+            <span className="flex items-center gap-1.5 font-medium text-[#102A43]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444] animate-pulse" />
+              Fare Shock
+            </span>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="relative w-full aspect-[4/3] max-h-[460px] flex items-center justify-center bg-[#FAFCFF] rounded-xl overflow-hidden border border-[#EAF3FF]">
         {/* Subtle grid background */}
@@ -173,11 +189,12 @@ export const IndiaMap: React.FC<IndiaMapProps> = ({ onSelectRoute, selectedRoute
             );
           })}
 
-          {/* Render Airport Nodes */}
+          {/* Render Airport Nodes with Smart Alignment & Typography */}
           {Object.entries(AIRPORT_COORDINATES).map(([code, airport]) => {
             const hasCritical = ROUTES_DATA.some(
               (r) => (r.originCode === code || r.destinationCode === code) && r.status === 'critical'
             );
+            const cfg = NODE_LABEL_CONFIG[code] || { codeDx: 10, codeDy: 0, nameDx: 10, nameDy: 10, textAnchor: 'start' as const };
 
             return (
               <g key={code} className="cursor-default">
@@ -187,35 +204,43 @@ export const IndiaMap: React.FC<IndiaMapProps> = ({ onSelectRoute, selectedRoute
                     cy={airport.y}
                     r="9"
                     fill="#EF4444"
-                    fillOpacity="0.2"
+                    fillOpacity="0.25"
                     className="animate-ping"
                   />
                 )}
                 <circle
                   cx={airport.x}
                   cy={airport.y}
-                  r="5"
+                  r="5.5"
                   fill="#0B1F3A"
                   stroke="#FFFFFF"
                   strokeWidth="2"
                 />
+                {/* Airport Code Label */}
                 <text
-                  x={airport.x + 8}
-                  y={airport.y + 4}
-                  fontSize="10"
-                  fontWeight="700"
-                  fill="#102A43"
-                  className="pointer-events-none drop-shadow-xs"
+                  x={airport.x + cfg.codeDx}
+                  y={airport.y + cfg.codeDy}
+                  textAnchor={cfg.textAnchor}
+                  dominantBaseline="middle"
+                  fontSize="11"
+                  fontWeight="800"
+                  fill="#0B1F3A"
+                  className="pointer-events-none tracking-tight select-none"
+                  style={{ textShadow: '0px 1px 2px rgba(255,255,255,0.9)' }}
                 >
                   {code}
                 </text>
+                {/* City Name Label */}
                 <text
-                  x={airport.x + 8}
-                  y={airport.y + 14}
-                  fontSize="8"
-                  fontWeight="500"
-                  fill="#627D98"
-                  className="pointer-events-none"
+                  x={airport.x + cfg.nameDx}
+                  y={airport.y + cfg.nameDy}
+                  textAnchor={cfg.textAnchor}
+                  dominantBaseline="middle"
+                  fontSize="9"
+                  fontWeight="600"
+                  fill="#475569"
+                  className="pointer-events-none select-none"
+                  style={{ textShadow: '0px 1px 2px rgba(255,255,255,0.9)' }}
                 >
                   {airport.name}
                 </text>
